@@ -1,12 +1,11 @@
+import React from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './pages/Home';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import Profile from './pages/Profile';
+import SignUp from "./pages/SignUp";
+import SignIn from "./pages/SignIn";
 
 function App() {
-
    return (
       <div className='text-white'>
          <div className="fixed left-0 top-0 -z-10 h-full w-full">
@@ -16,9 +15,9 @@ function App() {
          <BrowserRouter>
             <Routes>
                <Route path="/" element={<Home />} />
-               <Route path="/login" element={<Login />} />
-               <Route path="/signup" element={<Signup />} />
-               <Route path='/profile' element={<Profile />} />
+               <Route path="/signup" element={<SignUp />} />
+               <Route path="/signin" element={<SignIn />} />
+               <Route path="*" element={<div className="fixed w-full h-full flex flex-row justify-center items-center text-4xl font-semibold"><h1>404 | Page Not Found</h1></div>} />
             </Routes>
          </BrowserRouter>
       </div>
