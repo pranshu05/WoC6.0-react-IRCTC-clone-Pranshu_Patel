@@ -1,4 +1,18 @@
+import React, { useState } from "react";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
 const NavBar = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    const userAuth = getAuth();
+    onAuthStateChanged(userAuth, (user) => {
+        if (user) {
+            setIsLoggedIn(true);
+        } else {
+            setIsLoggedIn(false)
+        }
+    });
+
     return (
         <div className="w-full bg-transparent fixed top-0 left-0 z-10">
             <nav className="bg-transparent">
@@ -7,8 +21,9 @@ const NavBar = () => {
                         <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">WoC6.0</span>
                     </a>
                     <div className="flex items-center space-x-6 rtl:space-x-reverse">
-                        <a href="/profile" className="text-sm text-blue-500 hover:underline">Profile</a>
-                        <a href="/signin" className="text-sm text-blue-500 hover:underline">SignIn</a>
+                        {isLoggedIn ?
+                            <a href="/profile" className="text-sm text-blue-500 hover:underline">Profile</a> :
+                            <a href="/signin" className="text-sm text-blue-500 hover:underline">SignIn</a>}
                     </div>
                 </div>
             </nav>
