@@ -22,8 +22,8 @@ const NavBar = () => {
                     </a>
                     <div className="flex items-center space-x-6 rtl:space-x-reverse">
                         {isLoggedIn ?
-                            <a href="/profile" className="text-sm text-blue-500 hover:underline">Profile</a> :
-                            <a href="/signin" className="text-sm text-blue-500 hover:underline">SignIn</a>}
+                            <a href="/profile" className="text-sm hover:underline">Profile</a> :
+                            <a href="/signin" className="text-sm hover:underline">SignIn</a>}
                     </div>
                 </div>
             </nav>
