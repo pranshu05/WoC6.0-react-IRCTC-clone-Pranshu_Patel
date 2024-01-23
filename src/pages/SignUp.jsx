@@ -24,7 +24,7 @@ const SignUp = () => {
             .then((userCredential) => {
                 const user = userCredential.user;
                 console.log(user);
-                navigate("/login")
+                navigate("/signin")
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -45,7 +45,7 @@ const SignUp = () => {
                         <label className="text-white flex justify-center mb-2">Password <FaLock className='mt-1 mx-2' /></label>
                         <input className="bg-transparent border border-gray-500 mb-10 rounded-lg p-2 mx-auto w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3" type="password" label="Create password" value={password} onChange={(e) => setPassword(e.target.value)} required placeholder="Password" />
                         {error && <p className="text-red-500 my-4">{error}</p>}
-                        <button className="bg-black bg-opacity-5 hover:bg-opacity-10 border border-gray-500 mb-4 rounded-lg p-2 mx-auto w-11/12 sm:w-4/5 md:w-3/4 lg:w-1/3 flex justify-center" onClick={handleSignUp}><FaSignInAlt className='mt-1 mx-2'/> Sign Up</button>
+                        <button className="bg-black bg-opacity-5 hover:bg-opacity-10 border border-gray-500 mb-4 rounded-lg p-2 mx-auto w-11/12 sm:w-4/5 md:w-3/4 lg:w-1/3 flex justify-center" onClick={handleSignUp}><FaSignInAlt className='mt-1 mx-2' /> Sign Up</button>
                         <p className="text-gray-400">
                             Already have an account? <a className='text-blue-500' href="/signin">Sign In here</a>
                         </p>
