@@ -98,10 +98,10 @@ const Profile = () => {
     return (
         <div className="fixed left-0 top-0 -z-10 h-full w-full">
             <div className="flex flex-col items-center justify-center h-full text-center content-center">
-                <div className="mx-auto w-11/12 md:w-5/6 lg:w-4/5 backdrop-filter backdrop-blur-sm bg-black bg-opacity-5 border border-gray-500 rounded-lg p-5">
+                <div className="mx-auto w-11/12 md:w-5/6 lg:w-4/5 backdrop-filter backdrop-blur-sm bg-black bg-opacity-50 border border-gray-500 rounded-lg p-5">
                     <h2 className="mb-2 text-2xl font-extrabold leading-none tracking-tight text-white">Welcome</h2>
                     <p className="text-gray-50">{email}</p>
-                    <div className="backdrop-filter backdrop-blur-sm py-5 px-2 bg-black bg-opacity-5 border border-gray-500 rounded-lg grid grid-cols-1 md:grid-cols-2 gap-2 my-2">
+                    <div className="backdrop-filter backdrop-blur-sm py-5 px-2 bg-black bg-opacity-50 border border-gray-500 rounded-lg grid grid-cols-1 md:grid-cols-2 gap-2 my-2">
                         <div className="grid grid-cols-2 gap-2">
                             <p className="text-gray-50 mx-2 p-2">First Name</p>
                             <input className="mx-2 p-2 rounded-md border border-gray-500 bg-transparent text-gray-200" type="text" placeholder={`Enter your first name${userLoaded ? ` ${firstName}` : ''}`} value={firstName} onChange={(e) => setFirstName(e.target.value)} />
@@ -140,10 +140,10 @@ const Profile = () => {
                             <input className="mx-2 p-2 rounded-md border border-gray-500 bg-transparent text-gray-200" type="text" placeholder={`Enter your state${userLoaded ? `${state}` : ''}`} value={state} onChange={(e) => setState(e.target.value)} />
                         </div>
                     </div>
-                    <button className="bg-black bg-opacity-5 hover:bg-opacity-10 border border-gray-500 my-2 rounded-lg p-2 mx-2 " onClick={handleUpdateProfile}>
+                    <button className="bg-black bg-opacity-50 hover:bg-opacity-60 border border-gray-500 my-2 rounded-lg p-2 mx-2 " onClick={handleUpdateProfile}>
                         Update Profile
                     </button>
-                    <button className="bg-black bg-opacity-5 hover:bg-opacity-10 border border-gray-500 my-2 rounded-lg p-2 mx-2 " onClick={handleSignOut}>
+                    <button className="bg-black bg-opacity-50 hover:bg-opacity-60 border border-gray-500 my-2 rounded-lg p-2 mx-2 " onClick={handleSignOut}>
                         Sign Out
                     </button>
                 </div>
